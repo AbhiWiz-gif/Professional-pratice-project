@@ -12,16 +12,16 @@ pipeline {
             }
             post {
                 success {
-                    emailext subject: 'Pipeline Success',
-        body: 'Your pipeline has succeeded. See attached logs for details.',
-        to: 'abhii.mailboxx@gmail.com',
-        attachLog: true
+                    emailext subject: 'Unit and Integration Tests Success',
+                    body: 'Unit and integration tests have succeeded. See attached logs for details.',
+                    to: 'abhii.mailboxx@gmail.com',
+                    attachLog: true
                 }
                 failure {
-                    emailext subject: 'Pipeline Failure',
-        body: 'Your pipeline has failed. See attached logs for details.',
-        to: 'abhii.mailboxx@gmail.com',
-        attachLog: true
+                    emailext subject: 'Unit and Integration Tests Failure',
+                    body: 'Unit and integration tests have failed. See attached logs for details.',
+                    to: 'abhii.mailboxx@gmail.com',
+                    attachLog: true
                 }
             }
         }
@@ -33,6 +33,20 @@ pipeline {
         stage('Security Scan') {
             steps {
                 echo 'Use OWASP ZAP for security Scan'
+            }
+            post {
+                success {
+                    emailext subject: 'Security Scan Success',
+                    body: 'Security scan has succeeded. See attached logs for details.',
+                    to: 'abhii.mailboxx@gmail.com',
+                    attachLog: true
+                }
+                failure {
+                    emailext subject: 'Security Scan Failure',
+                    body: 'Security scan has failed. See attached logs for details.',
+                    to: 'abhii.mailboxx@gmail.com',
+                    attachLog: true
+                }
             }
         }
         stage('Deploy to staging') {
