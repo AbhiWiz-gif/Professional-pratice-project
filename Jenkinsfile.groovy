@@ -12,16 +12,14 @@ pipeline {
             }
             post {
                 success {
-                    emailext subject: 'Unit and Integration Tests Success',
-                    body: 'Unit and integration tests have succeeded. See attached logs for details.',
-                    to: 'abhii.mailboxx@gmail.com',
-                    attachLog: true
+                    mail to: 'abhii.mailboxx@gmail.com',
+                    subject: 'Unit and Integration Testing'
+                    body: 'Unit and integration tests have succeeded. See attached logs for details.',                  
                 }
                 failure {
-                    emailext subject: 'Unit and Integration Tests Failure',
-                    body: 'Unit and integration tests have failed. See attached logs for details.',
-                    to: 'abhii.mailboxx@gmail.com',
-                    attachLog: true
+                     mail to: 'abhii.mailboxx@gmail.com',
+                    subject: 'Unit and Integration Testing'
+                    body: 'Unit and integration tests have Failed. See attached logs for details.',
                 }
             }
         }
@@ -36,16 +34,14 @@ pipeline {
             }
             post {
                 success {
-                    emailext subject: 'Security Scan Success',
-                    body: 'Security scan has succeeded. See attached logs for details.',
-                    to: 'abhii.mailboxx@gmail.com',
-                    attachLog: true
+                    mail to: 'abhii.mailboxx@gmail.com',
+                    subject: 'Security scan',
+                    body: 'Security scan has succecced. See attached logs for details'
                 }
                 failure {
-                    emailext subject: 'Security Scan Failure',
-                    body: 'Security scan has failed. See attached logs for details.',
-                    to: 'abhii.mailboxx@gmail.com',
-                    attachLog: true
+                    mail to: 'abhii.mailboxx@gmail.com',
+                    subject: 'Security scan',
+                    body: 'Security scan has failed. See attached logs for details'
                 }
             }
         }
