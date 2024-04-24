@@ -13,13 +13,13 @@ pipeline {
             post {
                 success {
                     mail to: 'abhii.mailboxx@gmail.com',
-                    subject: 'Unit and Integration Testing'
-                    body: 'Unit and integration tests have succeeded. See attached logs for details.',                  
+                    subject: 'Unit and Integration Testing',
+                    body: 'Unit and integration tests have succeeded. See attached logs for details.'            
                 }
                 failure {
                      mail to: 'abhii.mailboxx@gmail.com',
-                    subject: 'Unit and Integration Testing'
-                    body: 'Unit and integration tests have Failed. See attached logs for details.',
+                    subject: 'Unit and Integration Testing',
+                    body: 'Unit and integration tests have Failed. See attached logs for details.'
                 }
             }
         }
