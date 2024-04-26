@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Builded the code using Maven'
+                echo ' the code using Maven'
             }
         }
         stage('Unit and Integration Tests') {
