@@ -36,20 +36,16 @@ pipeline {
             }
             post {
                 success {
-                    emailext (
                        mail to: 'abhii.mailboxx@gmail.com',
                         subject: 'Security scan',
                         body: 'Security scans have succeeded. See attached logs for details.',
                         attachmentsPattern: '**/target/security-reports/*.txt'
-                    )
                 }
                 failure {
-                    emailext (
                        mail to: 'abhii.mailboxx@gmail.com',
                         subject: 'Security scan',
                         body: 'Security scans have failed. See attached logs for details.',
                         attachmentsPattern: '**/target/security-reports/*.txt'
-                    )
                 }
             }
         }
