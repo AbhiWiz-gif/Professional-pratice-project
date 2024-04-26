@@ -12,20 +12,16 @@ pipeline {
             }
             post {
                 success {
-                    emailext (
                         to: 'abhii.mailboxx@gmail.com',
                         subject: 'Unit and Integration Testing',
                         body: 'Unit and integration test have succeeded. See attached logs for details.',
                         attachmentsPattern: '**/target/surefire-reports/*.txt'
-                    )
                 }
                 failure {
-                    emailext (
                         to: 'abhii.mailboxx@gmail.com',
                         subject: 'Unit and Integration Testing',
                         body: 'Unit and integration test have Failed. See attached logs for details.',
                         attachmentsPattern: '**/target/surefire-reports/*.txt'
-                    )
                 }
             }
         }
