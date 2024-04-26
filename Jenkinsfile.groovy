@@ -12,14 +12,20 @@ pipeline {
             }
             post {
                 success {
-                    mail to: 'abhii.mailboxx@gmail.com',
-                    subject: 'Unit and Integration Testing',
-                    body: 'Unit and integration test have succeeded. See attached logs for details.'            
+                    emailext (
+                        to: 'abhii.mailboxx@gmail.com',
+                        subject: 'Unit and Integration Testing',
+                        body: 'Unit and integration test have succeeded. See attached logs for details.',
+                        attachmentsPattern: '**/target/surefire-reports/*.txt'
+                    )
                 }
                 failure {
-                     mail to: 'abhii.mailboxx@gmail.com',
-                    subject: 'Unit and Integration Testing',
-                    body: 'Unit and integration test have Failed. See attached logs for details.'
+                    emailext (
+                        to: 'abhii.mailboxx@gmail.com',
+                        subject: 'Unit and Integration Testing',
+                        body: 'Unit and integration test have Failed. See attached logs for details.',
+                        attachmentsPattern: '**/target/surefire-reports/*.txt'
+                    )
                 }
             }
         }
@@ -34,14 +40,20 @@ pipeline {
             }
             post {
                 success {
-                    mail to: 'abhii.mailboxx@gmail.com',
-                    subject: 'Security scan',
-                    body: 'Security scans has succecced. See attached logs for details'
+                    emailext (
+                        to: 'abhii.mailboxx@gmail.com',
+                        subject: 'Security scan',
+                        body: 'Security scans have succeeded. See attached logs for details.',
+                        attachmentsPattern: '**/target/security-reports/*.txt'
+                    )
                 }
                 failure {
-                    mail to: 'abhii.mailboxx@gmail.com',
-                    subject: 'Security scan',
-                    body: 'Security scans has failed. See attached logs for details'
+                    emailext (
+                        to: 'abhii.mailboxx@gmail.com',
+                        subject: 'Security scan',
+                        body: 'Security scans have failed. See attached logs for details.',
+                        attachmentsPattern: '**/target/security-reports/*.txt'
+                    )
                 }
             }
         }
@@ -55,7 +67,7 @@ pipeline {
                 echo 'Using a tool like Selenium for integration tests'
             }
         }
-        stage('deploy to production') {
+        stage('Deploy to production') {
             steps {
                 echo 'Using AWS CLI to deploy'
             }
