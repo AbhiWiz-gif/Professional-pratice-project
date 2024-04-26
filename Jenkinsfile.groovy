@@ -19,7 +19,7 @@ pipeline {
                 failure {
                      mail to: 'abhii.mailboxx@gmail.com',
                     subject: 'Unit and Integration Testing',
-                    body: 'Unit and integration tests have Failed. See attached logs for details.'
+                    body: 'Unit and integration test have Failed. See attached logs for details.'
                 }
             }
         }
