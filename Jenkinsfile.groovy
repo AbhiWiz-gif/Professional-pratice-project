@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Unit and Integration Tests') {
             steps {
-                echo 'Done Unit and integration testing using mvn test'
+                echo 'Done Unit and integrations testing using mvn test'
             }
             post {
                 success {
