@@ -36,7 +36,7 @@ pipeline {
                 success {
                     mail to: 'abhii.mailboxx@gmail.com',
                     subject: 'Security scan',
-                    body: 'Security scan has succecced. See attached logs for details'
+                    body: 'Security scans has succecced. See attached logs for details'
                 }
                 failure {
                     mail to: 'abhii.mailboxx@gmail.com',
