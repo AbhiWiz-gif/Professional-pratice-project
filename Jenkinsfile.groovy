@@ -14,7 +14,7 @@ pipeline {
                 success {
                        mail to:'abhii.mailboxx@gmail.com',
                         subject:'Unit and Integration Testing',
-                        body:"Unit and integration test have succeeded. See attached logs for details: ${env.BUILD_URL}"
+                        body:"Unit and integration test have succeeded. See attached log for details: ${env.BUILD_URL}"
                 }
                 failure {
                        mail to:'abhii.mailboxx@gmail.com',
