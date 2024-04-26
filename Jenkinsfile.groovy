@@ -14,12 +14,12 @@ pipeline {
                 success {
                        mail to:'abhii.mailboxx@gmail.com',
                         subject:'Unit and Integration Testing',
-                        body:'Unit and integration test have succeeded. See attached logs for details.',
+                        body:'Unit and integration test have succeeded. See attached logs for details.'
                 }
                 failure {
                        mail to:'abhii.mailboxx@gmail.com',
                         subject:'Unit and Integration Testing',
-                        body:'Unit and integration test have Failed. See attached logs for details.',
+                        body:'Unit and integration test have Failed. See attached logs for details.'
                 }
             }
         }
@@ -36,12 +36,12 @@ pipeline {
                 success {
                        mail to: 'abhii.mailboxx@gmail.com',
                         subject: 'Security scan',
-                        body: 'Security scans have succeeded. See attached logs for details.',
+                        body: 'Security scans have succeeded. See attached logs for details.'
                 }
                 failure {
                        mail to: 'abhii.mailboxx@gmail.com',
                         subject: 'Security scan',
-                        body: 'Security scans have failed. See attached logs for details.',
+                        body: 'Security scans have failed. See attached logs for details.'
                 }
             }
         }
